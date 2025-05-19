@@ -42,29 +42,36 @@
         }
         .hero {
             background: url('imageskitchen-bg.jpg') center/cover no-repeat;
-            min-height: 100vh; /* Full-screen height */
+            min-height: 100vh;
         }
         .cta-section {
-            text-align: center;
             padding: 40px 20px;
-            background: #f4f4f4; /* Light background for contrast */
+            background: #f4f4f4;
+            text-align: center;
+        }
+        .cta-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem; /* Space between logo and contact info */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
         .cta-logo {
-            display: block;
-            margin: 0 auto 1.5rem auto; /* Centered with spacing below */
-            height: 150px; /* Same size as before */
+            height: 150px;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: #337ab7;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 700;
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem; /* Space between address and phone */
         }
-        .cta-button:hover {
-            background-color: #23527c;
+        .contact-info p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        .contact-info i {
+            margin-right: 0.5rem;
+            color: #337ab7; /* Match the theme color */
         }
         .section {
             padding: 40px 20px;
@@ -113,7 +120,14 @@
                 margin: 0.5rem 0;
             }
             .cta-logo {
-                height: 120px; /* Adjusted size for mobile */
+                height: 120px;
+            }
+            .cta-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .contact-info p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -126,11 +140,11 @@
         </div>
         <ul>
             <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#areas">Areas We Serve</a></li>
             <li><a href="#appliances">Appliances</a></li>
             <li><a href="#manufacturers">Manufacturers</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -140,8 +154,18 @@
     </section>
 
     <section class="cta-section">
-        <img src="imagescda-logo.png" alt="CDA Repair Logo - Family-Owned Appliance Repair in Dalton Gardens, ID" class="cta-logo">
-        <a href="tel:(208)800-3248" class="cta-button">Call Now</a>
+        <div class="cta-container">
+            <img src="imagescda-logo.png" alt="CDA Repair Logo - Family-Owned Appliance Repair in Dalton Gardens, ID" class="cta-logo">
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> 6848 N. Government Way Ste 114, Dalton Gardens, ID, United States, 83815</p>
+                <p><i class="fas fa-phone"></i> (208) 800-3248 or (509) 564-9099</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About CDA Repair – Family-Owned Experts in Dalton Gardens</h2>
+        <p>CDA Repair is a trusted, family-owned appliance repair service based in Dalton Gardens, ID, serving Spokane Valley, Coeur d’Alene, Hayden, Sagle, and the greater Inland Northwest. With a team of expert technicians, we specialize in in-home diagnostics and repairs for all major household appliances, including refrigerators, washers, dryers, dishwashers, and more. Our services include specialized sealed system repairs, ensuring lasting solutions for even the most complex issues. We pride ourselves on fast response times, flexible scheduling, transparent pricing, and a commitment to customer satisfaction. Let our local, family-oriented team keep your home running smoothly with reliable, cost-effective repairs.</p>
     </section>
 
     <section id="services" class="section">
@@ -232,11 +256,6 @@
             <li>Viking</li>
             <li>U-Line</li>
         </ul>
-    </section>
-
-    <section id="about" class="section">
-        <h2>About CDA Repair – Family-Owned Experts in Dalton Gardens</h2>
-        <p>CDA Repair is a trusted, family-owned appliance repair service based in Dalton Gardens, ID, serving Spokane Valley, Coeur d’Alene, Hayden, Sagle, and the greater Inland Northwest. With a team of expert technicians, we specialize in in-home diagnostics and repairs for all major household appliances, including refrigerators, washers, dryers, dishwashers, and more. Our services include specialized sealed system repairs, ensuring lasting solutions for even the most complex issues. We pride ourselves on fast response times, flexible scheduling, transparent pricing, and a commitment to customer satisfaction. Let our local, family-oriented team keep your home running smoothly with reliable, cost-effective repairs.</p>
     </section>
 
     <section id="contact" class="section">
