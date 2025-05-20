@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDA Repair - Your Family Appliance Experts</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa, #e0e7ff);
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #1a3552, #2c5282);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            z-index: 1000;
+        }
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            margin: 0;
+        }
+        .navbar ul li {
+            margin-left: 2rem;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #14b8a6;
+        }
+        .hero {
+            position: relative;
+            background: url('imageskitchen-bg.jpg') center/cover no-repeat;
+            min-height: 100vh;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        .cta-section {
+            padding: 40px 20px;
+            background: #e6f0fa;
+            text-align: center;
+        }
+        .cta-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .cta-logo {
+            height: 150px;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .contact-info p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        .contact-info i {
+            margin-right: 0.5rem;
+            color: #1e40af;
+        }
+        .section {
+            padding: 40px 20px;
+            background: #f9fafb;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin: 0 auto;
+            max-width: 1200px;
+            border-bottom: none;
+        }
+        .section h2 {
+            color: #1e40af;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+        }
+        .section h3 {
+            color: #3b82f6;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+        }
+        .service-list, .area-list, .appliance-list, .manufacturer-list, .tips-list, .resources-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service-item, .tip-item, .resource-item {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 300px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-item:hover, .tip-item:hover, .resource-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+        .resource-item p {
+            margin: 5px 0;
+        }
+        .resource-item a {
+            color: #1e40af;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .resource-item a:hover {
+            color: #14b8a6;
+        }
+        .social-links a {
+            color: #1e40af;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #14b8a6;
+        }
+        .social-links i {
+            margin-right: 5px;
+        }
+        footer {
+            background: linear-gradient(135deg, #1a3552, #2c5282);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #14b8a6;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+        .google-reviews-widget {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.5rem 1rem;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            .navbar ul li {
+                margin: 0.5rem 0;
+            }
+            .cta-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .cta-logo {
+                height: 120px;
+            }
+            .contact-info p {
+                font-size: 1.1rem;
+            }
+            p, li {
+                font-size: 1rem;
+            }
+            .section {
+                padding: 30px 15px;
+            }
+            .section h2 {
+                font-size: 1.5rem;
+            }
+            .section h3 {
+                font-size: 1.2rem;
+            }
+            .service-item, .tip-item, .resource-item {
+                max-width: 100%;
+            }
+            .google-reviews-widget {
+                max-width: 100%;
+                padding: 0 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .cta-logo {
+                height: 100px;
+            }
+            .contact-info p {
+                font-size: 1rem;
+            }
+            .section {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <!-- Logo removed from navbar -->
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#areas">Areas We Serve</a></li>
+            <li><a href="#appliances">Appliances</a></li>
+            <li><a href="#manufacturers">Manufacturers</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <!-- Only the background image remains -->
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <img src="imagescda-logo.png" alt="CDA Repair Logo - Family-Owned Appliance Repair in Dalton Gardens, ID" class="cta-logo">
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> 6848 N. Government Way Ste 114, Dalton Gardens, ID, United States, 83815</p>
+                <p><i class="fas fa-phone"></i> (208) 800-3248 or (509) 564-9099</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About CDA Repair – Family-Owned Experts in Dalton Gardens</h2>
+        <p>CDA Repair is a trusted, family-owned appliance repair service based in Dalton Gardens, ID, serving Spokane Valley, Coeur d’Alene, Hayden, Sagle, and the greater Inland Northwest. With a team of expert technicians, we specialize in in-home diagnostics and repairs for all major household appliances, including refrigerators, washers, dryers, dishwashers, and more. Our services include specialized sealed system repairs, ensuring lasting solutions for even the most complex issues. We pride ourselves on fast response times, flexible scheduling, transparent pricing, and a commitment to customer satisfaction. Let our local, family-oriented team keep your home running smoothly with reliable, cost-effective repairs.</p>
+    </section>
+
+    <section id="reviews" class="section">
+        <h2>What Our Customers Say</h2>
+        <!-- Placeholder for Google Reviews widget embed code -->
+        <div class="google-reviews-widget">
+            <p>[Google Reviews widget will display here once the embed code is added]</p>
+        </div>
+        <p><a href="https://g.co/kgs/F73Xv8Q" target="_blank">See more reviews or leave your own on Google</a></p>
+    </section>
+
+    <section id="troubleshooting" class="section">
+        <h2>Troubleshooting Tips for Your Appliances</h2>
+        <div class="tips-list">
+            <div class="tip-item">
+                <h3>Refrigerator Not Cooling?</h3>
+                <p>Clean the condenser coils and ensure proper air circulation. If it’s still not cooling, call us at (208) 800-3248 in Coeur d’Alene or Hayden.</p>
+            </div>
+            <div class="tip-item">
+                <h3>Washer Not Spinning?</h3>
+                <p>Balance the load and check the lid switch. If it doesn’t spin, we can help in Spokane Valley—call (208) 800-3248.</p>
+            </div>
+            <div class="tip-item">
+                <h3>Dryer Not Heating?</h3>
+                <p>Clear the lint filter and vent. If it’s still cold, contact us in Sagle or Athol at (208) 800-3248.</p>
+            </div>
+            <div class="tip-item">
+                <h3>Microwave Not Heating?</h3>
+                <p>Ensure the door is closed properly and check the power setting. For repairs in Rathdrum, call (208) 800-3248.</p>
+            </div>
+            <div class="tip-item">
+                <h3>Dishwasher Not Draining?</h3>
+                <p>Clean the drain filter and check the hose. If it’s still not draining, we’re in Worley—call (208) 800-3248.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Expert Appliance Repair Services in the Inland Northwest</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>Refrigerator Repair</h3>
+                <p>Quick fixes for cooling issues, including sealed system repairs, in Coeur d’Alene.</p>
+            </div>
+            <div class="service-item">
+                <h3>Freezer Repair</h3>
+                <p>Restore your freezer’s performance with our expert service in Spokane Valley.</p>
+            </div>
+            <div class="service-item">
+                <h3>Ice Maker Repair</h3>
+                <p>Keep your ice maker running smoothly with fast repairs in Hayden, ID.</p>
+            </div>
+            <div class="service-item">
+                <h3>Washing Machine Repair (Top Load)</h3>
+                <p>Reliable top-load washer repairs to get your laundry back on track in Dalton Gardens.</p>
+            </div>
+            <div class="service-item">
+                <h3>Washing Machine Repair (Front Load)</h3>
+                <p>Specialized front-load washer repairs for homes in Post Falls, ID.</p>
+            </div>
+            <div class="service-item">
+                <h3>Dryer Repair (Electric)</h3>
+                <p>Fast electric dryer repairs to keep your laundry routine uninterrupted in Rathdrum.</p>
+            </div>
+            <div class="service-item">
+                <h3>Dryer Repair (Gas)</h3>
+                <p>Expert gas dryer repairs with safety first, serving Sagle, ID.</p>
+            </div>
+            <div class="service-item">
+                <h3>Dishwasher Repair</h3>
+                <p>Fix leaks and clogs with our dishwasher repair services in Liberty Lake, WA.</p>
+            </div>
+            <div class="service-item">
+                <h3>Oven Repair (Electric)</h3>
+                <p>Get your electric oven back to peak performance in Spokane County.</p>
+            </div>
+            <div class="service-item">
+                <h3>Oven Repair (Gas)</h3>
+                <p>Safe and efficient gas oven repairs for Kootenai County homes.</p>
+            </div>
+            <div class="service-item">
+                <h3>Range Repair (Electric)</h3>
+                <p>Electric range repairs to keep your kitchen functional in Coeur d’Alene.</p>
+            </div>
+            <div class="service-item">
+                <h3>Range Repair (Gas)</h3>
+                <p>Gas range repairs with precision, serving Hayden, ID.</p>
+            </div>
+            <div class="service-item">
+                <h3>Cooktop Repair (Electric)</h3>
+                <p>Fast electric cooktop repairs for Spokane Valley kitchens.</p>
+            </div>
+            <div class="service-item">
+                <h3>Cooktop Repair (Gas)</h3>
+                <p>Expert gas cooktop repairs for safe cooking in Post Falls.</p>
+            </div>
+            <div class="service-item">
+                <h3>Microwave Repair</h3>
+                <p>Quick microwave repairs to keep your kitchen running smoothly in Sagle.</p>
+            </div>
+            <div class="service-item">
+                <h3>Garbage Disposal Repair</h3>
+                <p>Fix jammed or clogged disposals with our services in Rathdrum, ID.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="section">
+        <h2>Appliance Resources: Troubleshooting, Registration, and Recalls</h2>
+        <p>Protect your investment by registering your appliances and stay informed about recalls. Here’s why it matters:</p>
+        <ul>
+            <li><strong>Warranty Benefits:</strong> Registering ensures you can claim free repairs under warranty, saving on costly fixes.</li>
+            <li><strong>Recall Notifications:</strong> Get alerts for safety recalls to address potential hazards promptly.</li>
+            <li><strong>Maintenance Tips:</strong> Receive tips and updates from manufacturers to extend your appliance’s lifespan.</li>
+        </ul>
+        <div class="resources-list">
+            <div class="resource-item">
+                <h3>Whirlpool</h3>
+                <p><a href="https://www.whirlpool.com/owners/troubleshooting.html" target="_blank">Troubleshooting</a> | <a href="https://www.whirlpool.com/owners/product-registration.html" target="_blank">Register</a> | <a href="https://www.whirlpool.com/owners/product-recall.html" target="_blank">Recalls</a></p>
+            </div>
+            <div class="resource-item">
+                <h3>GE Appliances</h3>
+                <p><a href="https://www.geappliances.com/support/troubleshooting" target="_blank">Troubleshooting</a> | <a href="https://www.geappliances.com/register" target="_blank">Register</a> | <a href="https://www.geappliances.com/recalls" target="_blank">Recalls</a></p>
+            </div>
+            <div class="resource-item">
+                <h3>Samsung</h3>
+                <p><a href="https://www.samsung.com/us/support/troubleshooting" target="_blank">Troubleshooting</a> | <a href="https://www.samsung.com/us/support/register" target="_blank">Register</a> | <a href="https://www.samsung.com/us/support/recalls" target="_blank">Recalls</a></p>
+            </div>
+            <div class="resource-item">
+                <h3>LG</h3>
+                <p><a href="https://www.lg.com/us/support/troubleshooting" target="_blank">Troubleshooting</a> | <a href="https://www.lg.com/us/support/product-registration" target="_blank">Register</a> | <a href="https://www.lg.com/us/support/recall" target="_blank">Recalls</a></p>
+            </div>
+            <div class="resource-item">
+                <h3>Maytag</h3>
+                <p><a href="https://www.maytag.com/owners/troubleshooting.html" target="_blank">Troubleshooting</a> | <a href="https://www.maytag.com/owners/product-registration.html" target="_blank">Register</a> | <a href="https://www.maytag.com/owners/product-recall.html" target="_blank">Recalls</a></p>
+            </div>
+            <div class="resource-item">
+                <h3>Bosch</h3>
+                <p><a href="https://www.bosch-home.com/us/support/troubleshooting" target="_blank">Troubleshooting</a> | <a href="https://www.bosch-home.com/us/support/product-registration" target="_blank">Register</a> | <a href="https://www.bosch-home.com/us/support/recalls" target="_blank">Recalls</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="areas" class="section">
+        <h2>Areas We Serve in the Inland Northwest</h2>
+        <p>From Dalton Gardens to Spokane Valley, CDA Repair provides expert appliance repair services across the Inland Northwest.</p>
+        <div class="area-list">
+            <div class="service-item"><p>Spokane Valley, WA</p></div>
+            <div class="service-item"><p>Coeur d’Alene, ID</p></div>
+            <div class="service-item"><p>Hayden, ID</p></div>
+            <div class="service-item"><p>Sagle, ID</p></div>
+            <div class="service-item"><p>Post Falls, ID</p></div>
+            <div class="service-item"><p>Rathdrum, ID</p></div>
+            <div class="service-item"><p>Liberty Lake, WA</p></div>
+            <div class="service-item"><p>Spokane County, WA</p></div>
+            <div class="service-item"><p>Kootenai County, ID</p></div>
+        </div>
+    </section>
+
+    <section id="appliances" class="section">
+        <h2>Appliances We Service in Coeur d’Alene and Beyond</h2>
+        <p>Our skilled technicians handle all major household appliances, ensuring your home runs smoothly.</p>
+        <div class="appliance-list">
+            <div class="service-item"><p>Refrigerators</p></div>
+            <div class="service-item"><p>Freezers</p></div>
+            <div class="service-item"><p>Ice Makers</p></div>
+            <div class="service-item"><p>Top Load Washers</p></div>
+            <div class="service-item"><p>Front Load Washers</p></div>
+            <div class="service-item"><p>Electric Dryers</p></div>
+            <div class="service-item"><p>Gas Dryers</p></div>
+            <div class="service-item"><p>Dishwashers</p></div>
+            <div class="service-item"><p>Electric Ovens</p></div>
+            <div class="service-item"><p>Gas Ovens</p></div>
+            <div class="service-item"><p>Electric Ranges</p></div>
+            <div class="service-item"><p>Gas Ranges</p></div>
+            <div class="service-item"><p>Electric Cooktops</p></div>
+            <div class="service-item"><p>Gas Cooktops</p></div>
+            <div class="service-item"><p>Microwaves</p></div>
+            <div class="service-item"><p>Garbage Disposals</p></div>
+        </div>
+    </section>
+
+    <section id="manufacturers" class="section">
+        <h2>Manufacturers We Service in Spokane Valley and Coeur d’Alene</h2>
+        <p>We repair appliances from all major brands, ensuring quality service for every make and model.</p>
+        <div class="manufacturer-list">
+            <div class="service-item"><p>Amana</p></div>
+            <div class="service-item"><p>Admiral</p></div>
+            <div class="service-item"><p>Asko</p></div>
+            <div class="service-item"><p>Bosch</p></div>
+            <div class="service-item"><p>Dacor</p></div>
+            <div class="service-item"><p>Electrolux</p></div>
+            <div class="service-item"><p>Frigidaire</p></div>
+            <div class="service-item"><p>GE (General Electric)</p></div>
+            <div class="service-item"><p>Hotpoint</p></div>
+            <div class="service-item"><p>JennAir</p></div>
+            <div class="service-item"><p>Kenmore</p></div>
+            <div class="service-item"><p>KitchenAid</p></div>
+            <div class="service-item"><p>LG</p></div>
+            <div class="service-item"><p>Maytag</p></div>
+            <div class="service-item"><p>Samsung</p></div>
+            <div class="service-item"><p>Speed Queen</p></div>
+            <div class="service-item"><p>Whirlpool</p></div>
+            <div class="service-item"><p>Wolf</p></div>
+            <div class="service-item"><p>Sub-Zero</p></div>
+            <div class="service-item"><p>Thermador</p></div>
+            <div class="service-item"><p>Viking</p></div>
+            <div class="service-item"><p>U-Line</p></div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact CDA Repair for Fast Service in Coeur d’Alene</h2>
+        <p>Need urgent appliance repair? We’re here to help with fast, reliable service across the Inland Northwest.</p>
+        <p><i class="fas fa-map-marker-alt"></i> 6848 N. Government Way Ste 114, Dalton Gardens, ID, United States, 83815</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:(208)800-3248">(208) 800-3248</a> or <a href="tel:(509)564-9099">(509) 564-9099</a></p>
+        <p>Stay connected! Follow us on <a href="https://www.facebook.com/CDAApplianceRepair/about" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a> for exclusive offers and updates.</p>
+    </section>
+
+    <footer>
+        <p>© 2025 CDA Repair | Family-Owned Appliance Repair in Dalton Gardens, ID</p>
+        <p><i class="fas fa-map-marker-alt"></i> 6848 N. Government Way Ste 114, Dalton Gardens, ID, United States, 83815 | <i class="fas fa-phone"></i> <a href="tel:(208)800-3248">(208) 800-3248</a> or <a href="tel:(509)564-9099">(509) 564-9099</a></p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/CDAApplianceRepair/about" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://g.co/kgs/F73Xv8Q" target="_blank"><i class="fab fa-google"></i> Google Reviews</a>
+            <a href="https://g.co/kgs/F73Xv8Q" target="_blank"><i class="fas fa-map"></i> Find Us on Google</a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
