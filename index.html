@@ -3,26 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDA Repair - Your Family Appliance Experts</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <title>CDA Repair - Appliance Repair in Coeur d’Alene, Spokane Valley, Hayden</title>
+    <meta name="description" content="Trusted appliance repair in Coeur d’Alene, Spokane Valley, and Hayden. Fix refrigerators, washers, dryers, and more. Call (208) 800-3248 today!">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- LocalBusiness Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "CDA Appliance Repair",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6848 N. Government Way Ste 114",
+        "addressLocality": "Dalton Gardens",
+        "addressRegion": "ID",
+        "postalCode": "83815",
+        "addressCountry": "US"
+      },
+      "telephone": ["+12088003248", "+15095649099"],
+      "url": "https://cdaappliance.repair/",
+      "sameAs": [
+        "https://www.facebook.com/CDAApplianceRepair/about",
+        "https://g.co/kgs/F73Xv8Q"
+      ],
+      "description": "Family-owned appliance repair service in Coeur d’Alene, Spokane Valley, and surrounding areas.",
+      "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-15:00",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "50"
+      }
+    }
+    </script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #f5f7fa, #e0e7ff);
         }
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background: linear-gradient(135deg, #1a3552, #2c5282);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -40,31 +67,32 @@
         }
         .navbar a {
             text-decoration: none;
-            color: #fff;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .navbar a:hover {
-            color: #14b8a6;
+            color: #337ab7;
+            font-weight: 700;
         }
         .hero {
             position: relative;
             background: url('imageskitchen-bg.jpg') center/cover no-repeat;
             min-height: 100vh;
         }
-        .hero::before {
-            content: '';
+        .hero-cta {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #337ab7;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        .hero-cta:hover {
+            background-color: #23527c;
         }
         .cta-section {
             padding: 40px 20px;
-            background: #e6f0fa;
+            background: #f4f4f4;
             text-align: center;
         }
         .cta-container {
@@ -89,96 +117,72 @@
         }
         .contact-info i {
             margin-right: 0.5rem;
-            color: #1e40af;
+            color: #337ab7;
         }
         .section {
             padding: 40px 20px;
-            background: #f9fafb;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            margin: 0 auto;
-            max-width: 1200px;
-            border-bottom: none;
+            border-bottom: 1px solid #eee;
+            margin: 0;
         }
         .section h2 {
-            color: #1e40af;
+            color: #337ab7;
             margin-bottom: 20px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
         }
-        .section h3 {
-            color: #3b82f6;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
+        .section a {
+            color: #337ab7;
+            text-decoration: none;
         }
-        .service-list, .area-list, .appliance-list, .manufacturer-list, .tips-list, .resources-list {
+        .section a:hover {
+            text-decoration: underline;
+        }
+        .service-list, .area-list, .appliance-list, .manufacturer-list, .tips-list, .resources-list, .blog-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
-        .service-item, .tip-item, .resource-item {
+        .service-item, .tip-item, .resource-item, .blog-item {
             background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             width: 100%;
             max-width: 300px;
             text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .service-item:hover, .tip-item:hover, .resource-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        .service-item h3, .tip-item h3, .resource-item h3, .blog-item h3 {
+            color: #2980b9;
+            margin-top: 0;
         }
         .resource-item p {
             margin: 5px 0;
         }
         .resource-item a {
-            color: #1e40af;
+            color: #2980b9;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
         .resource-item a:hover {
-            color: #14b8a6;
+            text-decoration: underline;
         }
         .social-links a {
-            color: #1e40af;
+            color: #337ab7;
             text-decoration: none;
             margin: 0 10px;
             display: inline-flex;
             align-items: center;
-            transition: color 0.3s ease;
-        }
-        .social-links a:hover {
-            color: #14b8a6;
         }
         .social-links i {
             margin-right: 5px;
         }
         footer {
-            background: linear-gradient(135deg, #1a3552, #2c5282);
+            background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 30px 20px;
+            padding: 20px;
             margin-top: 40px;
         }
-        footer a {
-            color: #14b8a6;
-            transition: color 0.3s ease;
-        }
-        footer a:hover {
-            color: #fff;
-        }
-        .google-reviews-widget {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
         @media (max-width: 768px) {
-            .navbar {
-                padding: 0.5rem 1rem;
-            }
             .navbar ul {
                 flex-direction: column;
                 align-items: flex-end;
@@ -194,26 +198,10 @@
                 height: 120px;
             }
             .contact-info p {
-                font-size: 1.1rem;
-            }
-            p, li {
                 font-size: 1rem;
             }
-            .section {
-                padding: 30px 15px;
-            }
-            .section h2 {
-                font-size: 1.5rem;
-            }
-            .section h3 {
-                font-size: 1.2rem;
-            }
-            .service-item, .tip-item, .resource-item {
+            .service-item, .tip-item, .resource-item, .blog-item {
                 max-width: 100%;
-            }
-            .google-reviews-widget {
-                max-width: 100%;
-                padding: 0 10px;
             }
         }
         @media (max-width: 480px) {
@@ -221,10 +209,10 @@
                 height: 100px;
             }
             .contact-info p {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             .section {
-                padding: 20px 10px;
+                padding: 30px 15px;
             }
         }
     </style>
@@ -242,6 +230,7 @@
             <li><a href="#troubleshooting">Troubleshooting</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#resources">Resources</a></li>
+            <li><a href="#blog">Blog</a></li>
             <li><a href="#areas">Areas We Serve</a></li>
             <li><a href="#appliances">Appliances</a></li>
             <li><a href="#manufacturers">Manufacturers</a></li>
@@ -250,12 +239,13 @@
     </nav>
 
     <section id="home" class="hero">
-        <!-- Only the background image remains -->
+        <h1 style="position: absolute; left: -9999px;">CDA Appliance Repair - Coeur d’Alene, Spokane Valley</h1>
+        <a href="#about" class="hero-cta">Learn More About Us</a>
     </section>
 
     <section class="cta-section">
         <div class="cta-container">
-            <img src="imagescda-logo.png" alt="CDA Repair Logo - Family-Owned Appliance Repair in Dalton Gardens, ID" class="cta-logo">
+            <img src="imagescda-logo.png" alt="CDA Repair Logo - Family-Owned Appliance Repair in Dalton Gardens, ID" class="cta-logo" loading="lazy">
             <div class="contact-info">
                 <p><i class="fas fa-map-marker-alt"></i> 6848 N. Government Way Ste 114, Dalton Gardens, ID, United States, 83815</p>
                 <p><i class="fas fa-phone"></i> (208) 800-3248 or (509) 564-9099</p>
@@ -271,7 +261,9 @@
     <section id="reviews" class="section">
         <h2>What Our Customers Say</h2>
         <!-- Placeholder for Google Reviews widget embed code -->
+        <!-- Follow the steps to get the embed code from a service like EmbedSocial or Elfsight -->
         <div class="google-reviews-widget">
+            <!-- Paste your Google Reviews widget embed code here -->
             <p>[Google Reviews widget will display here once the embed code is added]</p>
         </div>
         <p><a href="https://g.co/kgs/F73Xv8Q" target="_blank">See more reviews or leave your own on Google</a></p>
@@ -282,23 +274,23 @@
         <div class="tips-list">
             <div class="tip-item">
                 <h3>Refrigerator Not Cooling?</h3>
-                <p>Clean the condenser coils and ensure proper air circulation. If it’s still not cooling, call us at (208) 800-3248 in Coeur d’Alene or Hayden.</p>
+                <p>Clean the condenser coils and ensure proper air circulation. If it’s still not cooling, check out our <a href="#services">Refrigerator Repair services</a> or call us at (208) 800-3248 in Coeur d’Alene or Hayden.</p>
             </div>
             <div class="tip-item">
                 <h3>Washer Not Spinning?</h3>
-                <p>Balance the load and check the lid switch. If it doesn’t spin, we can help in Spokane Valley—call (208) 800-3248.</p>
+                <p>Balance the load and check the lid switch. If it doesn’t spin, explore our <a href="#services">Washing Machine Repair services</a> or call us in Spokane Valley at (208) 800-3248.</p>
             </div>
             <div class="tip-item">
                 <h3>Dryer Not Heating?</h3>
-                <p>Clear the lint filter and vent. If it’s still cold, contact us in Sagle or Athol at (208) 800-3248.</p>
+                <p>Clear the lint filter and vent. If it’s still cold, see our <a href="#services">Dryer Repair services</a> or contact us in Sagle or Athol at (208) 800-3248.</p>
             </div>
             <div class="tip-item">
                 <h3>Microwave Not Heating?</h3>
-                <p>Ensure the door is closed properly and check the power setting. For repairs in Rathdrum, call (208) 800-3248.</p>
+                <p>Ensure the door is closed properly and check the power setting. For repairs in Rathdrum, check our <a href="#services">Microwave Repair services</a> or call (208) 800-3248.</p>
             </div>
             <div class="tip-item">
                 <h3>Dishwasher Not Draining?</h3>
-                <p>Clean the drain filter and check the hose. If it’s still not draining, we’re in Worley—call (208) 800-3248.</p>
+                <p>Clean the drain filter and check the hose. If it’s still not draining, we’re in Worley—see our <a href="#services">Dishwasher Repair services</a> or call (208) 800-3248.</p>
             </div>
         </div>
     </section>
@@ -409,6 +401,21 @@
         </div>
     </section>
 
+    <section id="blog" class="section">
+        <h2>Blog & Maintenance Tips</h2>
+        <div class="blog-list">
+            <div class="blog-item">
+                <h3>How to Fix a Refrigerator Not Cooling in Coeur d’Alene</h3>
+                <p>Clean the condenser coils and ensure proper air circulation. If the issue persists, contact CDA Repair at (208) 800-3248 for expert service in Coeur d’Alene and Hayden.</p>
+            </div>
+            <div class="blog-item">
+                <h3>Washer Maintenance Tips for Spokane Valley Residents</h3>
+                <p>Balance your loads and check the lid switch regularly. For repairs in Spokane Valley, call us at (208) 800-3248.</p>
+            </div>
+        </div>
+        <p>Stay tuned for more tips and updates!</p>
+    </section>
+
     <section id="areas" class="section">
         <h2>Areas We Serve in the Inland Northwest</h2>
         <p>From Dalton Gardens to Spokane Valley, CDA Repair provides expert appliance repair services across the Inland Northwest.</p>
@@ -483,6 +490,7 @@
         <p><i class="fas fa-map-marker-alt"></i> 6848 N. Government Way Ste 114, Dalton Gardens, ID, United States, 83815</p>
         <p><i class="fas fa-phone"></i> <a href="tel:(208)800-3248">(208) 800-3248</a> or <a href="tel:(509)564-9099">(509) 564-9099</a></p>
         <p>Stay connected! Follow us on <a href="https://www.facebook.com/CDAApplianceRepair/about" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a> for exclusive offers and updates.</p>
+        <p>Happy with our service? <a href="https://g.co/kgs/F73Xv8Q" target="_blank">Leave us a review on Google!</a></p>
     </section>
 
     <footer>
@@ -490,8 +498,7 @@
         <p><i class="fas fa-map-marker-alt"></i> 6848 N. Government Way Ste 114, Dalton Gardens, ID, United States, 83815 | <i class="fas fa-phone"></i> <a href="tel:(208)800-3248">(208) 800-3248</a> or <a href="tel:(509)564-9099">(509) 564-9099</a></p>
         <div class="social-links">
             <a href="https://www.facebook.com/CDAApplianceRepair/about" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="https://g.co/kgs/F73Xv8Q" target="_blank"><i class="fab fa-google"></i> Google Reviews</a>
-            <a href="https://g.co/kgs/F73Xv8Q" target="_blank"><i class="fas fa-map"></i> Find Us on Google</a>
+            <a href="https://g.co/kgs/F73Xv8Q" target="_blank"><i class="fab fa-google"></i> Find Us on Google</a>
         </div>
     </footer>
 
